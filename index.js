@@ -15,9 +15,9 @@ function myFunction() {
 }
 myFunction();
 
-//closure allows it to access internal because it nestedFunction has no variable of it's own.
-
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
+
+//closure allows it to access internal because nestedFunction has no variable of it's own so it looks to it's outer scope.
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
@@ -142,8 +142,12 @@ function lowPopulationAnimals(item) {
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-function USApop(/*Your Code Here*/) {
-  /*Your Code Here*/
+function USApop(accumulator, item) {
+  const population = zooAnimals.reduce(
+    (accumulator, item) => accumulator + item.population,
+    0
+  );
+  return population;
 }
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
